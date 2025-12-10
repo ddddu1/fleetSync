@@ -34,8 +34,7 @@
 
 ## ✨ Live Demo
 
-🔗 **Try it now:** [https://yourusername.github.io/fleet-sync-platform/](https://yourusername.github.io/fleet-sync-platform/)
-
+🔗 **Try it now:** [https://github.com/ddddu1/fleetSync]
 > **Demo Access:**  
 > - Username: `admin`  
 > - Password: `demo123`  
