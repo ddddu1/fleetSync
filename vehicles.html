@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FleetSync - Vehicles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="logo">
+            <i class="fas fa-satellite-dish"></i>
+            <span>FleetSync</span>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                    <div class="checkbox"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="vehicles.html" class="nav-link active">
+                    <i class="fas fa-car"></i>
+                    <span>Vehicles</span>
+                    <div class="checkbox active"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="analytics.html" class="nav-link">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                    <div class="checkbox"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="settings.html" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                    <div class="checkbox"></div>
+                </a>
+            </li>
+        </ul>
+        
+        <div class="sidebar-footer">
+            <div class="user-info-small">
+                <div class="user-avatar-small">JD</div>
+                <div class="user-details">
+                    <div class="user-name">John Doe</div>
+                    <div class="user-role">Fleet Manager</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>Vehicles</h1>
+                <div class="breadcrumb">
+                    <span>Home</span> / <span class="active">Vehicles</span>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="date-display">
+                    <i class="far fa-calendar"></i>
+                    <span id="current-date">December 9, 2025</span>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <div class="notification-badge">3</div>
+                    </div>
+                    
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search vehicles...">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Demo Presentation Notice -->
+        <div class="demo-notice">
+            <i class="fas fa-presentation-screen"></i>
+            <div>
+                <strong>Vehicles Management Page</strong> - View and manage your fleet vehicles.
+            </div>
+            <button class="close-notice">&times;</button>
+        </div>
+
+        <!-- Vehicles Content -->
+        <div class="vehicles-content">
+            <!-- Page Controls -->
+            <div class="page-controls">
+                <div class="control-group">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Add Vehicle
+                    </button>
+                    
+                    <button class="btn btn-outline">
+                        <i class="fas fa-filter"></i>
+                        Filter
+                    </button>
+                    
+                    <button class="btn btn-outline">
+                        <i class="fas fa-download"></i>
+                        Export
+                    </button>
+                </div>
+                
+                <div class="view-toggle">
+                    <button class="view-btn active">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button class="view-btn">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Vehicle Stats -->
+            <div class="vehicle-stats">
+                <div class="vehicle-stat">
+                    <div class="stat-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="stat-details">
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">Cars</div>
+                    </div>
+                </div>
+                
+                <div class="vehicle-stat">
+                    <div class="stat-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="stat-details">
+                        <div class="stat-value">7</div>
+                        <div class="stat-label">Trucks</div>
+                    </div>
+                </div>
+                
+                <div class="vehicle-stat">
+                    <div class="stat-icon">
+                        <i class="fas fa-van-shuttle"></i>
+                    </div>
+                    <div class="stat-details">
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">Vans</div>
+                    </div>
+                </div>
+                
+                <div class="vehicle-stat">
+                    <div class="stat-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <div class="stat-details">
+                        <div class="stat-value">3</div>
+                        <div class="stat-label">In Maintenance</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vehicles Grid -->
+            <div class="vehicles-grid">
+                <!-- Vehicle Card 1 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-header">
+                        <div class="vehicle-id">V-245</div>
+                        <div class="vehicle-status active">
+                            <span class="status-dot"></span>
+                            Active
+                        </div>
+                    </div>
+                    
+                    <div class="vehicle-image">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    
+                    <div class="vehicle-info">
+                        <div class="vehicle-model">Toyota Camry 2023</div>
+                        <div class="vehicle-details">
+                            <div class="detail">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Petrol</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>45,230 km</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="vehicle-actions">
+                        <button class="btn-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </button>
+                        <button class="btn-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </button>
+                        <button class="btn-icon">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Vehicle Card 2 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-header">
+                        <div class="vehicle-id">T-112</div>
+                        <div class="vehicle-status warning">
+                            <span class="status-dot"></span>
+                            Maintenance
+                        </div>
+                    </div>
+                    
+                    <div class="vehicle-image">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    
+                    <div class="vehicle-info">
+                        <div class="vehicle-model">Ford F-150 2022</div>
+                        <div class="vehicle-details">
+                            <div class="detail">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Diesel</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>78,450 km</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="vehicle-actions">
+                        <button class="btn-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </button>
+                        <button class="btn-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </button>
+                        <button class="btn-icon">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Vehicle Card 3 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-header">
+                        <div class="vehicle-id">V-308</div>
+                        <div class="vehicle-status active">
+                            <span class="status-dot"></span>
+                            Active
+                        </div>
+                    </div>
+                    
+                    <div class="vehicle-image">
+                        <i class="fas fa-van-shuttle"></i>
+                    </div>
+                    
+                    <div class="vehicle-info">
+                        <div class="vehicle-model">Mercedes Sprinter 2023</div>
+                        <div class="vehicle-details">
+                            <div class="detail">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Diesel</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>32,100 km</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="vehicle-actions">
+                        <button class="btn-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </button>
+                        <button class="btn-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </button>
+                        <button class="btn-icon">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Vehicle Card 4 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-header">
+                        <div class="vehicle-id">V-201</div>
+                        <div class="vehicle-status idle">
+                            <span class="status-dot"></span>
+                            Idle
+                        </div>
+                    </div>
+                    
+                    <div class="vehicle-image">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    
+                    <div class="vehicle-info">
+                        <div class="vehicle-model">Honda Civic 2021</div>
+                        <div class="vehicle-details">
+                            <div class="detail">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Hybrid</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>62,340 km</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="vehicle-actions">
+                        <button class="btn-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </button>
+                        <button class="btn-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </button>
+                        <button class="btn-icon">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Vehicle Card 5 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-header">
+                        <div class="vehicle-id">T-205</div>
+                        <div class="vehicle-status active">
+                            <span class="status-dot"></span>
+                            Active
+                        </div>
+                    </div>
+                    
+                    <div class="vehicle-image">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    
+                    <div class="vehicle-info">
+                        <div class="vehicle-model">Chevrolet Silverado 2022</div>
+                        <div class="vehicle-details">
+                            <div class="detail">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Diesel</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>89,120 km</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="vehicle-actions">
+                        <button class="btn-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </button>
+                        <button class="btn-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </button>
+                        <button class="btn-icon">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Vehicle Card 6 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-header">
+                        <div class="vehicle-id">V-409</div>
+                        <div class="vehicle-status">
+                            <span class="status-dot"></span>
+                            Offline
+                        </div>
+                    </div>
+                    
+                    <div class="vehicle-image">
+                        <i class="fas fa-van-shuttle"></i>
+                    </div>
+                    
+                    <div class="vehicle-info">
+                        <div class="vehicle-model">Ford Transit 2020</div>
+                        <div class="vehicle-details">
+                            <div class="detail">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Petrol</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>105,670 km</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="vehicle-actions">
+                        <button class="btn-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </button>
+                        <button class="btn-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </button>
+                        <button class="btn-icon">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <span class="page-ellipsis">...</span>
+                <button class="page-btn">5</button>
+                <button class="page-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-left">
+                <span>© 2025 FleetSync. All rights reserved.</span>
+            </div>
+            <div class="footer-right">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Help Center</a>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

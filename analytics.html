@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FleetSync - Analytics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="logo">
+            <i class="fas fa-satellite-dish"></i>
+            <span>FleetSync</span>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                    <div class="checkbox"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="vehicles.html" class="nav-link">
+                    <i class="fas fa-car"></i>
+                    <span>Vehicles</span>
+                    <div class="checkbox"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="analytics.html" class="nav-link active">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                    <div class="checkbox active"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="settings.html" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                    <div class="checkbox"></div>
+                </a>
+            </li>
+        </ul>
+        
+        <div class="sidebar-footer">
+            <div class="user-info-small">
+                <div class="user-avatar-small">JD</div>
+                <div class="user-details">
+                    <div class="user-name">John Doe</div>
+                    <div class="user-role">Fleet Manager</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>Analytics</h1>
+                <div class="breadcrumb">
+                    <span>Home</span> / <span class="active">Analytics</span>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="date-display">
+                    <i class="far fa-calendar"></i>
+                    <span id="current-date">December 9, 2025</span>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <div class="notification-badge">3</div>
+                    </div>
+                    
+                    <button class="btn btn-primary">
+                        <i class="fas fa-download"></i>
+                        Export Report
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Demo Presentation Notice -->
+        <div class="demo-notice">
+            <i class="fas fa-presentation-screen"></i>
+            <div>
+                <strong>Analytics Page</strong> - Detailed insights and reports about your fleet performance.
+            </div>
+            <button class="close-notice">&times;</button>
+        </div>
+
+        <!-- Analytics Content -->
+        <div class="analytics-content">
+            <!-- Time Period Selector -->
+            <div class="time-selector">
+                <div class="time-options">
+                    <button class="time-option active">Last 7 days</button>
+                    <button class="time-option">Last 30 days</button>
+                    <button class="time-option">Last 3 months</button>
+                    <button class="time-option">Last year</button>
+                    <button class="time-option custom">Custom Range <i class="fas fa-calendar-alt"></i></button>
+                </div>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>Total Distance</h3>
+                        <div class="metric-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>12%</span>
+                        </div>
+                    </div>
+                    <div class="metric-value">8,450 km</div>
+                    <div class="metric-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%;"></div>
+                        </div>
+                        <div class="progress-label">85% of target</div>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>Fuel Efficiency</h3>
+                        <div class="metric-change negative">
+                            <i class="fas fa-arrow-down"></i>
+                            <span>5%</span>
+                        </div>
+                    </div>
+                    <div class="metric-value">12.4 km/L</div>
+                    <div class="metric-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 62%;"></div>
+                        </div>
+                        <div class="progress-label">62% of target</div>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>Maintenance Cost</h3>
+                        <div class="metric-change positive">
+                            <i class="fas fa-arrow-down"></i>
+                            <span>8%</span>
+                        </div>
+                    </div>
+                    <div class="metric-value">$2,450</div>
+                    <div class="metric-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 45%;"></div>
+                        </div>
+                        <div class="progress-label">45% of budget</div>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>On-Time Rate</h3>
+                        <div class="metric-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>3%</span>
+                        </div>
+                    </div>
+                    <div class="metric-value">97.5%</div>
+                    <div class="metric-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 98%;"></div>
+                        </div>
+                        <div class="progress-label">98% of target</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="analytics-charts">
+                <!-- Distance Chart -->
+                <div class="chart-container-large">
+                    <div class="chart-header">
+                        <h3>Distance Trend</h3>
+                        <div class="chart-controls">
+                            <select>
+                                <option>By Day</option>
+                                <option>By Week</option>
+                                <option>By Month</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="chart-placeholder">
+                        <!-- Line chart would go here -->
+                        <div class="line-chart">
+                            <div class="chart-grid">
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                            </div>
+                            <div class="line-path">
+                                <!-- Simulated line -->
+                                <svg width="100%" height="200" style="position: absolute; top: 0; left: 0;">
+                                    <path d="M0,150 L50,140 L100,130 L150,110 L200,90 L250,100 L300,120 L350,100" 
+                                          stroke="#2563eb" stroke-width="3" fill="none"/>
+                                    <path d="M0,170 L50,160 L100,150 L150,130 L200,110 L250,120 L300,140 L350,120" 
+                                          stroke="#10b981" stroke-width="3" fill="none" stroke-dasharray="5,5"/>
+                                </svg>
+                            </div>
+                            <div class="chart-labels">
+                                <span>Mon</span>
+                                <span>Tue</span>
+                                <span>Wed</span>
+                                <span>Thu</span>
+                                <span>Fri</span>
+                                <span>Sat</span>
+                                <span>Sun</span>
+                            </div>
+                        </div>
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <div class="legend-line solid"></div>
+                                <span>This Week</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-line dashed"></div>
+                                <span>Last Week</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fuel Consumption Chart -->
+                <div class="chart-container-large">
+                    <div class="chart-header">
+                        <h3>Fuel Consumption by Vehicle Type</h3>
+                    </div>
+                    <div class="chart-placeholder">
+                        <!-- Bar chart would go here -->
+                        <div class="bar-chart">
+                            <div class="chart-y-axis">
+                                <span>40 L</span>
+                                <span>30 L</span>
+                                <span>20 L</span>
+                                <span>10 L</span>
+                                <span>0 L</span>
+                            </div>
+                            <div class="chart-bars">
+                                <div class="bar-group">
+                                    <div class="bar" style="height: 80%; background-color: #2563eb;">
+                                        <div class="bar-value">32L</div>
+                                    </div>
+                                    <div class="bar-label">Cars</div>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar" style="height: 95%; background-color: #10b981;">
+                                        <div class="bar-value">38L</div>
+                                    </div>
+                                    <div class="bar-label">Trucks</div>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar" style="height: 65%; background-color: #f59e0b;">
+                                        <div class="bar-value">26L</div>
+                                    </div>
+                                    <div class="bar-label">Vans</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Tables -->
+            <div class="data-tables">
+                <!-- Top Performing Vehicles -->
+                <div class="data-table">
+                    <div class="table-header">
+                        <h3>Top Performing Vehicles</h3>
+                        <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Vehicle ID</th>
+                                <th>Type</th>
+                                <th>Distance</th>
+                                <th>Fuel Efficiency</th>
+                                <th>Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>V-245</td>
+                                <td><i class="fas fa-car"></i> Car</td>
+                                <td>1,245 km</td>
+                                <td>14.2 km/L</td>
+                                <td>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>T-112</td>
+                                <td><i class="fas fa-truck"></i> Truck</td>
+                                <td>2,340 km</td>
+                                <td>10.8 km/L</td>
+                                <td>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>V-308</td>
+                                <td><i class="fas fa-van-shuttle"></i> Van</td>
+                                <td>1,890 km</td>
+                                <td>12.5 km/L</td>
+                                <td>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Maintenance Schedule -->
+                <div class="data-table">
+                    <div class="table-header">
+                        <h3>Upcoming Maintenance</h3>
+                        <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Vehicle ID</th>
+                                <th>Service Type</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>V-201</td>
+                                <td>Oil Change</td>
+                                <td>Dec 15, 2025</td>
+                                <td><span class="status-badge warning">Due Soon</span></td>
+                                <td><button class="btn-small">Schedule</button></td>
+                            </tr>
+                            <tr>
+                                <td>T-205</td>
+                                <td>Tire Rotation</td>
+                                <td>Dec 20, 2025</td>
+                                <td><span class="status-badge warning">Due Soon</span></td>
+                                <td><button class="btn-small">Schedule</button></td>
+                            </tr>
+                            <tr>
+                                <td>V-409</td>
+                                <td>Brake Inspection</td>
+                                <td>Jan 5, 2026</td>
+                                <td><span class="status-badge">Scheduled</span></td>
+                                <td><button class="btn-small">View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-left">
+                <span>© 2025 FleetSync. All rights reserved.</span>
+            </div>
+            <div class="footer-right">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Help Center</a>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FleetSync - Settings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="logo">
+            <i class="fas fa-satellite-dish"></i>
+            <span>FleetSync</span>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                    <div class="checkbox"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="vehicles.html" class="nav-link">
+                    <i class="fas fa-car"></i>
+                    <span>Vehicles</span>
+                    <div class="checkbox"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="analytics.html" class="nav-link">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                    <div class="checkbox"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="settings.html" class="nav-link active">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                    <div class="checkbox active"></div>
+                </a>
+            </li>
+        </ul>
+        
+        <div class="sidebar-footer">
+            <div class="user-info-small">
+                <div class="user-avatar-small">JD</div>
+                <div class="user-details">
+                    <div class="user-name">John Doe</div>
+                    <div class="user-role">Fleet Manager</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>Settings</h1>
+                <div class="breadcrumb">
+                    <span>Home</span> / <span class="active">Settings</span>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="date-display">
+                    <i class="far fa-calendar"></i>
+                    <span id="current-date">December 9, 2025</span>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <div class="notification-badge">3</div>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="save-settings">
+                        <i class="fas fa-save"></i>
+                        Save Changes
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Demo Presentation Notice -->
+        <div class="demo-notice">
+            <i class="fas fa-presentation-screen"></i>
+            <div>
+                <strong>Settings Page</strong> - Configure your FleetSync application preferences.
+            </div>
+            <button class="close-notice">&times;</button>
+        </div>
+
+        <!-- Settings Content -->
+        <div class="settings-content">
+            <!-- Settings Navigation -->
+            <div class="settings-nav">
+                <div class="settings-nav-item active" data-tab="general">
+                    <i class="fas fa-sliders-h"></i>
+                    <span>General</span>
+                </div>
+                <div class="settings-nav-item" data-tab="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span>Notifications</span>
+                </div>
+                <div class="settings-nav-item" data-tab="vehicles">
+                    <i class="fas fa-car"></i>
+                    <span>Vehicle Settings</span>
+                </div>
+                <div class="settings-nav-item" data-tab="users">
+                    <i class="fas fa-users"></i>
+                    <span>Users & Permissions</span>
+                </div>
+                <div class="settings-nav-item" data-tab="integrations">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <span>Integrations</span>
+                </div>
+                <div class="settings-nav-item" data-tab="account">
+                    <i class="fas fa-user-cog"></i>
+                    <span>Account</span>
+                </div>
+            </div>
+
+            <!-- Settings Panels -->
+            <div class="settings-panels">
+                <!-- General Settings -->
+                <div class="settings-panel active" id="general-panel">
+                    <h2>General Settings</h2>
+                    <p class="panel-description">Configure your basic application preferences.</p>
+                    
+                    <div class="settings-group">
+                        <h3>Display Preferences</h3>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Theme</h4>
+                                <p>Choose between light and dark mode</p>
+                            </div>
+                            <div class="setting-control">
+                                <div class="theme-selector">
+                                    <button class="theme-option active">
+                                        <i class="fas fa-sun"></i>
+                                        <span>Light</span>
+                                    </button>
+                                    <button class="theme-option">
+                                        <i class="fas fa-moon"></i>
+                                        <span>Dark</span>
+                                    </button>
+                                    <button class="theme-option">
+                                        <i class="fas fa-adjust"></i>
+                                        <span>Auto</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Default Dashboard View</h4>
+                                <p>Choose what you see first when opening the dashboard</p>
+                            </div>
+                            <div class="setting-control">
+                                <select>
+                                    <option>Overview</option>
+                                    <option>Map View</option>
+                                    <option>Activity Feed</option>
+                                    <option>Vehicle Status</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Units</h4>
+                                <p>Select your preferred measurement units</p>
+                            </div>
+                            <div class="setting-control">
+                                <div class="units-selector">
+                                    <div class="unit-option">
+                                        <input type="radio" id="metric" name="units" checked>
+                                        <label for="metric">Metric (km, L)</label>
+                                    </div>
+                                    <div class="unit-option">
+                                        <input type="radio" id="imperial" name="units">
+                                        <label for="imperial">Imperial (miles, gal)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-group">
+                        <h3>Data Preferences</h3>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Auto-Refresh Interval</h4>
+                                <p>How often the dashboard updates with new data</p>
+                            </div>
+                            <div class="setting-control">
+                                <select>
+                                    <option>30 seconds</option>
+                                    <option>1 minute</option>
+                                    <option>5 minutes</option>
+                                    <option>10 minutes</option>
+                                    <option>Manual refresh only</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Data Retention</h4>
+                                <p>How long to keep historical data</p>
+                            </div>
+                            <div class="setting-control">
+                                <select>
+                                    <option>3 months</option>
+                                    <option>6 months</option>
+                                    <option>1 year</option>
+                                    <option>2 years</option>
+                                    <option>Indefinitely</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications Settings -->
+                <div class="settings-panel" id="notifications-panel">
+                    <h2>Notification Settings</h2>
+                    <p class="panel-description">Configure how and when you receive notifications.</p>
+                    
+                    <div class="settings-group">
+                        <h3>Notification Channels</h3>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Email Notifications</h4>
+                                <p>Receive notifications via email</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Push Notifications</h4>
+                                <p>Receive push notifications in your browser</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>SMS Alerts</h4>
+                                <p>Receive critical alerts via SMS</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-group">
+                        <h3>Notification Types</h3>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Vehicle Alerts</h4>
+                                <p>Maintenance, breakdowns, and status changes</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Trip Updates</h4>
+                                <p>Trip completions, delays, and deviations</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Fuel & Maintenance</h4>
+                                <p>Low fuel alerts and scheduled maintenance</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>System Updates</h4>
+                                <p>Software updates and system announcements</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle Settings -->
+                <div class="settings-panel" id="vehicles-panel">
+                    <h2>Vehicle Settings</h2>
+                    <p class="panel-description">Configure vehicle-specific settings and thresholds.</p>
+                    
+                    <div class="settings-group">
+                        <h3>Vehicle Tracking</h3>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Tracking Interval</h4>
+                                <p>How often vehicle locations are updated</p>
+                            </div>
+                            <div class="setting-control">
+                                <select>
+                                    <option>30 seconds</option>
+                                    <option>1 minute</option>
+                                    <option>5 minutes</option>
+                                    <option>10 minutes</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Idle Time Threshold</h4>
+                                <p>When a vehicle is considered idle</p>
+                            </div>
+                            <div class="setting-control">
+                                <div class="input-with-unit">
+                                    <input type="number" value="15" min="1" max="120">
+                                    <span>minutes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-group">
+                        <h3>Alert Thresholds</h3>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Low Fuel Alert</h4>
+                                <p>Send alert when fuel level drops below this percentage</p>
+                            </div>
+                            <div class="setting-control">
+                                <div class="input-with-unit">
+                                    <input type="number" value="20" min="5" max="50">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Speed Limit Alert</h4>
+                                <p>Send alert when vehicle exceeds this speed</p>
+                            </div>
+                            <div class="setting-control">
+                                <div class="input-with-unit">
+                                    <input type="number" value="120" min="80" max="200">
+                                    <span>km/h</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Geofence Alert</h4>
+                                <p>Send alert when vehicle leaves designated area</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Users & Permissions -->
+                <div class="settings-panel" id="users-panel">
+                    <h2>Users & Permissions</h2>
+                    <p class="panel-description">Manage user accounts and access permissions.</p>
+                    
+                    <div class="users-list">
+                        <div class="user-card">
+                            <div class="user-avatar">JD</div>
+                            <div class="user-info">
+                                <h4>John Doe</h4>
+                                <p>john.doe@company.com</p>
+                                <span class="user-role-tag admin">Admin</span>
+                            </div>
+                            <div class="user-actions">
+                                <button class="btn-icon">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn-icon">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="user-card">
+                            <div class="user-avatar">AS</div>
+                            <div class="user-info">
+                                <h4>Alice Smith</h4>
+                                <p>alice.smith@company.com</p>
+                                <span class="user-role-tag manager">Manager</span>
+                            </div>
+                            <div class="user-actions">
+                                <button class="btn-icon">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn-icon">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="user-card">
+                            <div class="user-avatar">RJ</div>
+                            <div class="user-info">
+                                <h4>Robert Johnson</h4>
+                                <p>robert.j@company.com</p>
+                                <span class="user-role-tag viewer">Viewer</span>
+                            </div>
+                            <div class="user-actions">
+                                <button class="btn-icon">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn-icon">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-secondary" style="margin-top: 20px;">
+                        <i class="fas fa-user-plus"></i>
+                        Add New User
+                    </button>
+                    
+                    <div class="settings-group" style="margin-top: 40px;">
+                        <h3>Permission Levels</h3>
+                        
+                        <div class="permission-level">
+                            <h4>Admin</h4>
+                            <p>Full access to all features, settings, and user management.</p>
+                        </div>
+                        
+                        <div class="permission-level">
+                            <h4>Manager</h4>
+                            <p>Can view all data, manage vehicles, but cannot change system settings.</p>
+                        </div>
+                        
+                        <div class="permission-level">
+                            <h4>Viewer</h4>
+                            <p>Read-only access to dashboard and reports.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Integrations -->
+                <div class="settings-panel" id="integrations-panel">
+                    <h2>Integrations</h2>
+                    <p class="panel-description">Connect FleetSync with other services.</p>
+                    
+                    <div class="integrations-grid">
+                        <div class="integration-card">
+                            <div class="integration-icon">
+                                <i class="fab fa-google-drive" style="color: #4285F4;"></i>
+                            </div>
+                            <div class="integration-info">
+                                <h4>Google Drive</h4>
+                                <p>Backup reports and export data</p>
+                            </div>
+                            <div class="integration-status">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-card">
+                            <div class="integration-icon">
+                                <i class="fas fa-sms" style="color: #10b981;"></i>
+                            </div>
+                            <div class="integration-info">
+                                <h4>SMS Gateway</h4>
+                                <p>Send SMS alerts to drivers</p>
+                            </div>
+                            <div class="integration-status">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-card">
+                            <div class="integration-icon">
+                                <i class="fas fa-map-marked-alt" style="color: #ef4444;"></i>
+                            </div>
+                            <div class="integration-info">
+                                <h4>Map Services</h4>
+                                <p>Google Maps integration</p>
+                            </div>
+                            <div class="integration-status">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-card">
+                            <div class="integration-icon">
+                                <i class="fas fa-file-invoice-dollar" style="color: #8b5cf6;"></i>
+                            </div>
+                            <div class="integration-info">
+                                <h4>Accounting Software</h4>
+                                <p>QuickBooks integration</p>
+                            </div>
+                            <div class="integration-status">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="api-section">
+                        <h3>API Access</h3>
+                        <p>Use our API to integrate FleetSync with your own systems.</p>
+                        
+                        <div class="api-key">
+                            <div class="api-key-label">API Key:</div>
+                            <div class="api-key-value">fs_7x9a2b8c4d5e6f1g3h0i9j8k7l6m5n4</div>
+                            <button class="btn-icon">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <button class="btn btn-outline">
+                            <i class="fas fa-redo"></i>
+                            Regenerate API Key
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Account Settings -->
+                <div class="settings-panel" id="account-panel">
+                    <h2>Account Settings</h2>
+                    <p class="panel-description">Manage your account information and security.</p>
+                    
+                    <div class="account-profile">
+                        <div class="profile-avatar-large">JD</div>
+                        <div class="profile-info">
+                            <h3>John Doe</h3>
+                            <p>Fleet Manager</p>
+                            <p class="profile-email">john.doe@company.com</p>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-edit"></i>
+                                Edit Profile
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-group">
+                        <h3>Security</h3>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Change Password</h4>
+                                <p>Update your account password</p>
+                            </div>
+                            <div class="setting-control">
+                                <button class="btn btn-outline">
+                                    Change Password
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Two-Factor Authentication</h4>
+                                <p>Add an extra layer of security to your account</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Login History</h4>
+                                <p>View recent login activity</p>
+                            </div>
+                            <div class="setting-control">
+                                <button class="btn btn-outline">
+                                    View History
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-group">
+                        <h3>Danger Zone</h3>
+                        
+                        <div class="danger-zone">
+                            <div class="danger-item">
+                                <div>
+                                    <h4>Delete Account</h4>
+                                    <p>Permanently delete your account and all data</p>
+                                </div>
+                                <button class="btn btn-danger">
+                                    Delete Account
+                                </button>
+                            </div>
+                            
+                            <div class="danger-item">
+                                <div>
+                                    <h4>Export Data</h4>
+                                    <p>Download all your data in a portable format</p>
+                                </div>
+                                <button class="btn btn-outline">
+                                    Export Data
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-left">
+                <span>© 2025 FleetSync. All rights reserved.</span>
+            </div>
+            <div class="footer-right">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Help Center</a>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

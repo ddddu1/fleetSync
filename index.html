@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FleetSync - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="logo">
+            <i class="fas fa-satellite-dish"></i>
+            <span>FleetSync</span>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link active">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                    <div class="checkbox active"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="vehicles.html" class="nav-link">
+                    <i class="fas fa-car"></i>
+                    <span>Vehicles</span>
+                    <div class="checkbox"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="analytics.html" class="nav-link">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                    <div class="checkbox"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="settings.html" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                    <div class="checkbox"></div>
+                </a>
+            </li>
+        </ul>
+        
+        <div class="sidebar-footer">
+            <div class="user-info-small">
+                <div class="user-avatar-small">JD</div>
+                <div class="user-details">
+                    <div class="user-name">John Doe</div>
+                    <div class="user-role">Fleet Manager</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>Dashboard</h1>
+                <div class="breadcrumb">
+                    <span>Home</span> / <span class="active">Dashboard</span>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="date-display">
+                    <i class="far fa-calendar"></i>
+                    <span id="current-date">December 9, 2025</span>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <div class="notification-badge">3</div>
+                    </div>
+                    
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Demo Presentation Notice -->
+        <div class="demo-notice">
+            <i class="fas fa-presentation-screen"></i>
+            <div>
+                <strong>Demo Presentation Mode</strong> - All data is simulated for demonstration purposes.
+                Click on navigation items to view different pages.
+            </div>
+            <button class="close-notice">&times;</button>
+        </div>
+
+        <!-- Main Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- Top Statistics Cards -->
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #e0f2fe;">
+                        <i class="fas fa-route" style="color: #0369a1;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value">1,024 km</div>
+                        <div class="stat-label">Total Distance</div>
+                    </div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>12%</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #f0f9ff;">
+                        <i class="fas fa-car" style="color: #1d4ed8;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value">24</div>
+                        <div class="stat-label">Active Vehicles</div>
+                    </div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>5%</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #fef3c7;">
+                        <i class="fas fa-gas-pump" style="color: #d97706;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value">365 L</div>
+                        <div class="stat-label">Fuel Used</div>
+                    </div>
+                    <div class="stat-change negative">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>8%</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #dcfce7;">
+                        <i class="fas fa-clock" style="color: #16a34a;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value">98%</div>
+                        <div class="stat-label">On-Time Rate</div>
+                    </div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>3%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <!-- Distance Chart -->
+                <div class="chart-card full-width">
+                    <div class="chart-header">
+                        <h3>Total Distance Traveled (km)</h3>
+                        <div class="chart-period">
+                            <select>
+                                <option>Last 7 Months</option>
+                                <option>Last 6 Months</option>
+                                <option>Last Year</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <div class="chart-y-axis">
+                            <span>900</span>
+                            <span>600</span>
+                            <span>300</span>
+                            <span>100</span>
+                            <span>0</span>
+                        </div>
+                        
+                        <div class="chart-bars">
+                            <div class="chart-bar-wrapper">
+                                <div class="chart-bar" style="height: 65%;" data-value="780">
+                                    <div class="chart-tooltip">Sep: 780 km</div>
+                                </div>
+                                <div class="chart-label">Sep</div>
+                            </div>
+                            
+                            <div class="chart-bar-wrapper">
+                                <div class="chart-bar" style="height: 82%;" data-value="920">
+                                    <div class="chart-tooltip">Oct: 920 km</div>
+                                </div>
+                                <div class="chart-label">Oct</div>
+                            </div>
+                            
+                            <div class="chart-bar-wrapper">
+                                <div class="chart-bar" style="height: 95%;" data-value="1024">
+                                    <div class="chart-tooltip">Nov: 1,024 km</div>
+                                </div>
+                                <div class="chart-label">Nov</div>
+                            </div>
+                            
+                            <div class="chart-bar-wrapper">
+                                <div class="chart-bar" style="height: 100%;" data-value="1100">
+                                    <div class="chart-tooltip">Dec: 1,100 km</div>
+                                </div>
+                                <div class="chart-label">Dec</div>
+                            </div>
+                            
+                            <div class="chart-bar-wrapper">
+                                <div class="chart-bar" style="height: 75%;" data-value="820">
+                                    <div class="chart-tooltip">Jan: 820 km</div>
+                                </div>
+                                <div class="chart-label">Jan</div>
+                            </div>
+                            
+                            <div class="chart-bar-wrapper">
+                                <div class="chart-bar" style="height: 60%;" data-value="650">
+                                    <div class="chart-tooltip">Feb: 650 km</div>
+                                </div>
+                                <div class="chart-label">Feb</div>
+                            </div>
+                            
+                            <div class="chart-bar-wrapper">
+                                <div class="chart-bar" style="height: 50%;" data-value="540">
+                                    <div class="chart-tooltip">Mar: 540 km</div>
+                                </div>
+                                <div class="chart-label">Mar</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-footer">
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: #2563eb;"></div>
+                                <span>Distance (km)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle Distribution Card -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Vehicle Distribution</h3>
+                    </div>
+                    
+                    <div class="distribution-container">
+                        <div class="distribution-chart">
+                            <div class="pie-chart">
+                                <div class="pie-segment cars" style="--percentage: 50%;"></div>
+                                <div class="pie-segment trucks" style="--percentage: 30%;"></div>
+                                <div class="pie-segment vans" style="--percentage: 20%;"></div>
+                                <div class="pie-center">
+                                    <div class="pie-value">24</div>
+                                    <div class="pie-label">Total</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="distribution-legend">
+                            <div class="dist-item">
+                                <div class="dist-color cars"></div>
+                                <div class="dist-info">
+                                    <div class="dist-type">Cars</div>
+                                    <div class="dist-percentage">50%</div>
+                                </div>
+                                <div class="dist-count">12 vehicles</div>
+                            </div>
+                            
+                            <div class="dist-item">
+                                <div class="dist-color trucks"></div>
+                                <div class="dist-info">
+                                    <div class="dist-type">Trucks</div>
+                                    <div class="dist-percentage">30%</div>
+                                </div>
+                                <div class="dist-count">7 vehicles</div>
+                            </div>
+                            
+                            <div class="dist-item">
+                                <div class="dist-color vans"></div>
+                                <div class="dist-info">
+                                    <div class="dist-type">Vans</div>
+                                    <div class="dist-percentage">20%</div>
+                                </div>
+                                <div class="dist-count">5 vehicles</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trip Statistics Card -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Trip Statistics</h3>
+                    </div>
+                    
+                    <div class="trip-stats">
+                        <div class="trip-stat-large">
+                            <div class="trip-value">365</div>
+                            <div class="trip-label">Total Trips</div>
+                            <div class="trip-change positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>15 more than last month</span>
+                            </div>
+                        </div>
+                        
+                        <div class="trip-details">
+                            <div class="trip-detail">
+                                <div class="detail-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="detail-info">
+                                    <div class="detail-value">284</div>
+                                    <div class="detail-label">On Time</div>
+                                </div>
+                            </div>
+                            
+                            <div class="trip-detail">
+                                <div class="detail-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="detail-info">
+                                    <div class="detail-value">7</div>
+                                    <div class="detail-label">Delayed</div>
+                                </div>
+                            </div>
+                            
+                            <div class="trip-detail">
+                                <div class="detail-icon">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <div class="detail-info">
+                                    <div class="detail-value">74</div>
+                                    <div class="detail-label">Canceled</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity & Map Section -->
+            <div class="bottom-section">
+                <!-- Recent Activity -->
+                <div class="activity-card">
+                    <div class="card-header">
+                        <h3>Recent Activity</h3>
+                        <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon success">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-title">Vehicle #V-245 completed delivery</div>
+                                <div class="activity-time">10 minutes ago</div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-title">Maintenance alert for Truck #T-112</div>
+                                <div class="activity-time">45 minutes ago</div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon info">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-title">New vehicle added to fleet</div>
+                                <div class="activity-time">2 hours ago</div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon success">
+                                <i class="fas fa-gas-pump"></i>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-title">Fuel refill completed for Van #V-308</div>
+                                <div class="activity-time">5 hours ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Map Preview -->
+                <div class="map-card">
+                    <div class="card-header">
+                        <h3>Live Fleet Map</h3>
+                        <div class="map-legend">
+                            <div class="legend-item">
+                                <div class="legend-dot active"></div>
+                                <span>Active</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-dot idle"></div>
+                                <span>Idle</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <div class="map-grid">
+                                <!-- Simulated map grid -->
+                                <div class="grid-line horizontal"></div>
+                                <div class="grid-line vertical"></div>
+                                <div class="grid-line horizontal"></div>
+                                <div class="grid-line vertical"></div>
+                                
+                                <!-- Simulated vehicle markers -->
+                                <div class="vehicle-marker active" style="top: 30%; left: 20%;">
+                                    <i class="fas fa-car"></i>
+                                    <div class="marker-tooltip">V-245</div>
+                                </div>
+                                
+                                <div class="vehicle-marker active" style="top: 60%; left: 40%;">
+                                    <i class="fas fa-truck"></i>
+                                    <div class="marker-tooltip">T-112</div>
+                                </div>
+                                
+                                <div class="vehicle-marker idle" style="top: 45%; left: 70%;">
+                                    <i class="fas fa-van-shuttle"></i>
+                                    <div class="marker-tooltip">V-308</div>
+                                </div>
+                                
+                                <div class="vehicle-marker active" style="top: 20%; left: 80%;">
+                                    <i class="fas fa-car"></i>
+                                    <div class="marker-tooltip">V-201</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="map-stats">
+                        <div class="map-stat">
+                            <div class="map-stat-value">18</div>
+                            <div class="map-stat-label">Active Now</div>
+                        </div>
+                        <div class="map-stat">
+                            <div class="map-stat-value">6</div>
+                            <div class="map-stat-label">Idle</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-left">
+                <span>© 2025 FleetSync. All rights reserved.</span>
+            </div>
+            <div class="footer-right">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Help Center</a>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
